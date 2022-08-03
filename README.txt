@@ -1,0 +1,1 @@
+Este es un pequeño proyecto descartable, en el cual estudio las colisiones de objetos y creación de los mismos. Ademas de usar otros algoritmos encontrados en internet 
