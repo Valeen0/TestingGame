@@ -8,7 +8,7 @@ import panels.GamePanel;
 public class GameController extends Thread{
 
 	GameStatus gameStatus;
-	int FPS = 60;
+	int FPS = 3;
 	GamePanel game;
 
 	public GameController(JPanel game) {
@@ -19,7 +19,7 @@ public class GameController extends Thread{
 		
 		gameStatus = GameStatus.RUNNING;
 		
-		double drawInterval = 1000000000 / FPS; // 0.016 seconds
+		double drawInterval = 1000000000 / FPS; 
 		double nextDrawTime = System.nanoTime() + drawInterval;
 		
 		while(GameStatus.RUNNING.equals(gameStatus)) {
