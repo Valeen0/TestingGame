@@ -2,6 +2,7 @@ package models;
 
 import javax.swing.*;
 
+import controller.FigureController;
 import panels.GamePanel;
 import helpers.Constants;
 import java.awt.*;
@@ -9,17 +10,19 @@ import java.awt.geom.*;
 
 public class Figure implements Constants{
 
-	int tileSize = Constants.tileSize;
+	FigureController figureController;
+	
+	public int tileSize = Constants.tileSize;
 	int figureX, figureY;
-
-	public Figure() {}
+	boolean object = true;
 	
 	public Figure(int figureX, int figureY) {
+		figureController = new FigureController(this);
 		this.figureX = figureX;
 		this.figureY = figureY;
 	}
 
-	public void generate(Graphics g) {
+	public void draw(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		
 		g2.setColor(Color.BLUE);
@@ -27,19 +30,21 @@ public class Figure implements Constants{
 		
 	}
 
-
 	public int getXPosition() {
-		return this.figureX;
+		return figureX;
 	}
 	public int getYPosition() {
-		return this.figureY;
+		return figureY;
+	}
+	public FigureController getController() {
+		return figureController;
 	}
 	
 	public void setXPosition(int x) {
-		this.figureX = x;
+		figureX = x;
 	}
 	public void setYPosition(int y) {
-		this.figureY = y;
+		figureY = y;
 	}
 	
 }

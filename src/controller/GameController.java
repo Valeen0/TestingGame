@@ -8,7 +8,7 @@ import panels.GamePanel;
 public class GameController extends Thread{
 
 	GameStatus gameStatus;
-	int FPS = 3;
+	int FPS = 4;
 	GamePanel game;
 
 	public GameController(JPanel game) {
