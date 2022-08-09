@@ -3,36 +3,43 @@ package models;
 import javax.swing.*;
 
 import panels.GamePanel;
-
+import helpers.Constants;
 import java.awt.*;
 import java.awt.geom.*;
 
-public class Figure {
+public class Figure implements Constants{
 
-	int tileSize;
+	int tileSize = Constants.tileSize;
 	int figureX, figureY;
-	char[] figures = { 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
-	char nextFigure;
 
-	public Figure(Graphics g, int figureX, int figureY) {
-		this.tileSize = Tile.size;
+	public Figure() {}
+	
+	public Figure(int figureX, int figureY) {
 		this.figureX = figureX;
 		this.figureY = figureY;
-
-		generateRandom(g);
 	}
 
-	public void generateRandom(Graphics g) {
+	public void generate(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
-		createFigure(g2, (int) Math.round(Math.random() * 6));
-	}
-
-	public void createFigure(Graphics2D g2, int f) {
-
-		g2.setColor(Color.RED);
-		//drawFigureA(g2);
+		
+		g2.setColor(Color.BLUE);
+		g2.fillRect(figureX-tileSize/2, figureY, tileSize, tileSize);
 		
 	}
+
+
+	public int getXPosition() {
+		return this.figureX;
+	}
+	public int getYPosition() {
+		return this.figureY;
+	}
 	
+	public void setXPosition(int x) {
+		this.figureX = x;
+	}
+	public void setYPosition(int y) {
+		this.figureY = y;
+	}
 	
 }

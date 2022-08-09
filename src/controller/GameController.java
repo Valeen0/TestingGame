@@ -16,7 +16,7 @@ public class GameController extends Thread{
 	}
 	
 	public void run() {
-		
+		game.startGame();
 		gameStatus = GameStatus.RUNNING;
 		
 		double drawInterval = 1000000000 / FPS; 
